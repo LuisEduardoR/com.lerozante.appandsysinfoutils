@@ -33,7 +33,10 @@ namespace Lerozante.AppAndSysInfoUtils {
         [Tooltip("Only show this in the Unity Editor.")]
         [SerializeField] bool showOnlyInEditor = false;
 
-        // Canvas used to draw the HUD
+        // Canvas used to draw the HUD, be sure to make it exclusive for this,
+        // not only because we may disable it to hide this info panel but because
+        // updating the FPS might cause the entire canvas to be redrawn and we do
+        // that a lot.
         Canvas _canvas = null;
 
         // Used to calculate and store the FPS
