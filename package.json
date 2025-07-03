@@ -1,7 +1,7 @@
 {
     "name" : "com.lerozante.appandsysinfoutils",
     "displayName" : "App And System Info Utils",
-    "version" : "0.1.0",
+    "version" : "0.1.1",
     "unity" : "2019.4",
     "author" : "Luís Eduardo Rozante",
     "description" : "Utility scripts and prefabs to display some application and system info to the screen in Unity Projects",
