@@ -87,7 +87,7 @@ namespace Lerozante.AppAndSysInfoUtils {
             _sampleSum = FPSSampleCount * Time.unscaledDeltaTime;
             _currentSample = 0;
 
-            _lastUpdateTime = Time.time;
+            _lastUpdateTime = Time.realtimeSinceStartup;
 
             // We just need to get hardware info at start because it's supposed to not change.
             _hardwareInfo = GetFormattedHardwareInfo();
@@ -180,11 +180,11 @@ namespace Lerozante.AppAndSysInfoUtils {
 
         void UpdateInfoHUD()
         {
-            if (Time.time - _lastUpdateTime >= updateFPSDelay)
+            if (Time.realtimeSinceStartup - _lastUpdateTime >= updateFPSDelay)
             {
                 float fps = CalculateFPSFromSamples();
                 _fpsText = GetFormattedFPS(fps, colorCodeFPS);
-                _lastUpdateTime = Time.time;
+                _lastUpdateTime = Time.realtimeSinceStartup;
             }
 
             // Gathers the app and system information that can change:
